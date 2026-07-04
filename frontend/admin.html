@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage products catalog, check system purchases and update order statuses at SimpleStore.">
+  <title>Simple E-Commerce Store - Admin Panel</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+
+  <!-- Rendered by js/layout.js -->
+  <header></header>
+
+  <main class="main-content">
+    
+    <div style="margin-bottom: 2rem;">
+      <h1 class="auth-title" style="font-size: 2.2rem; text-align: left;">Admin Control Dashboard</h1>
+    </div>
+
+    <!-- Tab Buttons -->
+    <div class="admin-tabs">
+      <button class="admin-tab-btn active" id="tab-btn-products">Manage Products</button>
+      <button class="admin-tab-btn" id="tab-btn-orders">Manage Orders</button>
+    </div>
+
+    <!-- Spinner Loader -->
+    <div class="spinner-wrapper" id="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- PRODUCTS TAB CONTAINER -->
+    <div class="admin-tab-content" id="products-tab-content" style="display: none;">
+      
+      <!-- Top Action Bar -->
+      <div class="admin-action-bar">
+        <h3 class="cart-title">Products Inventory</h3>
+        <button class="hero-btn" id="open-add-product-btn" style="padding: 0.7rem 1.8rem; font-size: 0.95rem;">
+          ➕ Add New Product
+        </button>
+      </div>
+
+      <!-- Products Inventory Table -->
+      <div class="table-container">
+        <table id="products-table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Product Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="products-table-body">
+            <!-- Loaded dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- ORDERS TAB CONTAINER -->
+    <div class="admin-tab-content" id="orders-tab-content" style="display: none;">
+      <div class="admin-action-bar">
+        <h3 class="cart-title">Customer Purchase Orders</h3>
+      </div>
+
+      <!-- Orders Table -->
+      <div class="table-container">
+        <table id="orders-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Date Placed</th>
+              <th>Total Billing</th>
+              <th>Status</th>
+              <th>Address & Phone</th>
+            </tr>
+          </thead>
+          <tbody id="orders-table-body">
+            <!-- Loaded dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ADD/EDIT PRODUCT MODAL -->
+    <div class="modal" id="product-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="modal-title">Add New Product</h3>
+          <button class="modal-close" id="close-modal-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="product-form" enctype="multipart/form-data">
+            <!-- Hidden ID Field for editing -->
+            <input type="hidden" id="product-id">
+
+            <div class="form-group">
+              <label for="prod-title" class="form-label">Product Name</label>
+              <input type="text" id="prod-title" class="form-control" placeholder="e.g. Organic Apple Cider" required>
+            </div>
+
+            <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+              <div>
+                <label for="prod-price" class="form-label">Unit Price (₹)</label>
+                <input type="number" id="prod-price" class="form-control" min="0" step="0.01" placeholder="9.99" required>
+              </div>
+              <div>
+                <label for="prod-stock" class="form-label">Stock Count</label>
+                <input type="number" id="prod-stock" class="form-control" min="0" placeholder="50" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="prod-category" class="form-label">Category</label>
+              <input type="text" id="prod-category" class="form-control" placeholder="e.g. Beverages, Fruits, Apparel" required>
+            </div>
+
+            <div class="form-group">
+              <label for="prod-desc" class="form-label">Description</label>
+              <textarea id="prod-desc" class="form-control" rows="3" placeholder="Describe the product details..." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="prod-image" class="form-label">Product Image File</label>
+              <input type="file" id="prod-image" class="form-control" accept="image/*">
+              <span style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem; display: block;" id="image-upload-help">
+                Please upload a JPG, PNG, or WEBP image.
+              </span>
+            </div>
+
+            <button type="submit" class="auth-btn" id="save-product-btn">Save Product</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Rendered by js/layout.js -->
+  <footer></footer>
+
+  <!-- Scripts -->
+  <script src="/js/toast.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/layout.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

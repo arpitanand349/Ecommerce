@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create a new SimpleStore account to purchase fresh items, track orders and customize your experience.">
+  <title>Simple E-Commerce Store - Register</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+
+  <!-- Rendered by js/layout.js -->
+  <header></header>
+
+  <main class="main-content">
+    <div class="auth-container">
+      <div class="auth-header">
+        <h2 class="auth-title">Create Account</h2>
+        <p class="auth-subtitle">Join us to start placing orders today.</p>
+      </div>
+
+      <form id="register-form">
+        <div class="form-group">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" id="email" class="form-control" placeholder="name@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-control" placeholder="At least 6 characters" required>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password" class="form-label">Confirm Password</label>
+          <input type="password" id="confirm-password" class="form-control" placeholder="Repeat password" required>
+        </div>
+
+        <button type="submit" class="auth-btn" id="submit-btn">Sign Up</button>
+      </form>
+
+      <div class="auth-footer">
+        Already have an account? <a href="/login.html">Sign In</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Rendered by js/layout.js -->
+  <footer></footer>
+
+  <!-- Scripts -->
+  <script src="/js/toast.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/layout.js"></script>
+  <script src="/js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View specific product information, reviews, and stock availability on SimpleStore.">
+  <title>Simple E-Commerce Store - Product Details</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+
+  <!-- Rendered by js/layout.js -->
+  <header></header>
+
+  <main class="main-content">
+    
+    <!-- Back Navigation -->
+    <div style="margin-bottom: 2rem;">
+      <a href="/index.html" style="color: var(--primary-accent); font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem;">
+        ← Back to Products Catalog
+      </a>
+    </div>
+
+    <!-- Spinner Loader -->
+    <div class="spinner-wrapper" id="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Product Details Content -->
+    <div class="details-container" id="details-container" style="display: none;">
+      
+      <!-- Left Panel: Image -->
+      <div class="details-image-panel">
+        <img id="product-img" src="" alt="" class="details-img">
+      </div>
+
+      <!-- Right Panel: Information & Controls -->
+      <div class="details-info-panel">
+        <span id="product-category" class="details-category">Category</span>
+        <h1 id="product-title" class="details-title">Product Title</h1>
+        <div id="product-price" class="details-price">₹0.00</div>
+        
+        <h4 class="details-desc-title">Description</h4>
+        <p id="product-desc" class="details-desc">Detailed product description text...</p>
+
+        <!-- Stock Tag -->
+        <div>
+          <span id="stock-badge" class="stock-status stock-in">In Stock</span>
+        </div>
+
+        <!-- Quantity & Add Controls -->
+        <div class="purchase-controls">
+          <div class="qty-selector" id="qty-selector-container">
+            <button class="qty-btn" id="qty-minus" aria-label="Decrease quantity">−</button>
+            <span class="qty-val" id="qty-value">1</span>
+            <button class="qty-btn" id="qty-plus" aria-label="Increase quantity">+</button>
+          </div>
+          <button class="action-btn-large" id="add-to-cart-btn">
+            🛒 Add to Cart
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Error State -->
+    <div id="error-state" style="display: none; text-align: center; padding: 4rem 2rem;">
+      <h3>Product Not Found</h3>
+      <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 2rem;">The product you are trying to view does not exist or has been removed.</p>
+      <a href="/index.html" class="hero-btn">Go to Homepage</a>
+    </div>
+
+  </main>
+
+  <!-- Rendered by js/layout.js -->
+  <footer></footer>
+
+  <!-- Scripts -->
+  <script src="/js/toast.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/layout.js"></script>
+  <script src="/js/product.js"></script>
+</body>
+</html>

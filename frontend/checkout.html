@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Provide shipping address and contact details to finalize checkout at SimpleStore.">
+  <title>Simple E-Commerce Store - Checkout</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+
+  <!-- Rendered by js/layout.js -->
+  <header></header>
+
+  <main class="main-content">
+    
+    <div style="margin-bottom: 2rem;">
+      <a href="/cart.html" style="color: var(--primary-accent); font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+        ← Back to Shopping Cart
+      </a>
+      <h1 class="auth-title" style="font-size: 2.2rem; text-align: left;">Checkout Details</h1>
+    </div>
+
+    <!-- Spinner Loader -->
+    <div class="spinner-wrapper" id="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Main Checkout Grid -->
+    <div class="cart-grid" id="checkout-grid" style="display: none;">
+      
+      <!-- Left side: Shipping Details Form -->
+      <div class="cart-card" style="padding: 2rem;">
+        <h3 class="summary-title" style="border-bottom: none; margin-bottom: 1.5rem; padding-bottom: 0;">Shipping Information</h3>
+        <form id="checkout-form">
+          <div class="form-group">
+            <label for="address" class="form-label">Full Shipping Address</label>
+            <textarea id="address" class="form-control" rows="4" placeholder="Street Address, City, State, ZIP Code" style="resize: vertical;" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" id="phone" class="form-control" placeholder="+91 XXXXX XXXXX (e.g., +91 98765 43210)" required>
+          </div>
+
+          <div class="form-group">
+            <label for="payment-method" class="form-label">Payment Method</label>
+            <select id="payment-method" class="form-control" style="background-color: var(--bg-main);" disabled>
+              <option value="Cash on Delivery" selected>Cash on Delivery (COD)</option>
+            </select>
+            <span style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem; display: block;">Only Cash on Delivery is currently supported.</span>
+          </div>
+
+          <button type="submit" class="checkout-btn" id="place-order-btn">
+            Place Order (Cash on Delivery)
+          </button>
+        </form>
+      </div>
+
+      <!-- Right side: Simple Cart items billing summary -->
+      <div class="cart-summary-card">
+        <h3 class="summary-title">Summary</h3>
+        
+        <!-- Small items summary list -->
+        <div id="checkout-items-summary" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
+          <!-- Loaded dynamically -->
+        </div>
+
+        <div class="summary-row" style="border-top: 1px dashed var(--border-color); padding-top: 1rem;">
+          <span>Subtotal</span>
+          <span id="checkout-subtotal">₹0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span style="color: var(--success); font-weight: 700;">FREE</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total Order Value</span>
+          <span id="checkout-total">₹0.00</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Cart Empty Fallback (in case they access directly) -->
+    <div class="cart-card empty-cart-state" id="empty-checkout-state" style="display: none;">
+      <div style="font-size: 4rem; margin-bottom: 1rem;">🛒</div>
+      <h3 class="empty-cart-text">Cannot checkout. Your cart is empty.</h3>
+      <a href="/index.html" class="hero-btn" style="padding: 0.8rem 2.5rem;">Go Shop</a>
+    </div>
+
+  </main>
+
+  <!-- Rendered by js/layout.js -->
+  <footer></footer>
+
+  <!-- Scripts -->
+  <script src="/js/toast.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/layout.js"></script>
+  <script src="/js/checkout.js"></script>
+</body>
+</html>

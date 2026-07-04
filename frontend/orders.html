@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View your order history, delivery status and shipping details at SimpleStore.">
+  <title>Simple E-Commerce Store - My Orders</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+
+  <!-- Rendered by js/layout.js -->
+  <header></header>
+
+  <main class="main-content">
+    
+    <div style="margin-bottom: 2rem;">
+      <h1 class="auth-title" style="font-size: 2.2rem; text-align: left;">Order History</h1>
+    </div>
+
+    <!-- Spinner Loader -->
+    <div class="spinner-wrapper" id="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Order Items List Container -->
+    <div class="orders-list" id="orders-list" style="display: none;">
+      <!-- Loaded dynamically -->
+    </div>
+
+    <!-- Empty State -->
+    <div class="cart-card empty-cart-state" id="empty-orders-state" style="display: none;">
+      <div style="font-size: 4rem; margin-bottom: 1rem;">📦</div>
+      <h3 class="empty-cart-text">You haven't placed any orders yet</h3>
+      <p style="color: var(--text-muted); margin-bottom: 2rem;">Go to the catalog and start placing your first purchase.</p>
+      <a href="/index.html" class="hero-btn" style="padding: 0.8rem 2.5rem;">Explore Products</a>
+    </div>
+
+  </main>
+
+  <!-- Rendered by js/layout.js -->
+  <footer></footer>
+
+  <!-- Scripts -->
+  <script src="/js/toast.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/layout.js"></script>
+  <script src="/js/orders.js"></script>
+</body>
+</html>

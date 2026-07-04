@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View items in your shopping cart, adjust quantities and proceed to checkout at SimpleStore.">
+  <title>Simple E-Commerce Store - Cart</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+
+  <!-- Rendered by js/layout.js -->
+  <header></header>
+
+  <main class="main-content">
+    
+    <div style="margin-bottom: 2rem;">
+      <h1 class="auth-title" style="font-size: 2.2rem; text-align: left;">Your Shopping Cart</h1>
+    </div>
+
+    <!-- Spinner Loader -->
+    <div class="spinner-wrapper" id="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Cart Layout Grid -->
+    <div class="cart-grid" id="cart-grid" style="display: none;">
+      
+      <!-- Left side: Cart Items List -->
+      <div class="cart-card">
+        <div class="cart-header">
+          <span class="cart-title" id="cart-items-count">0 Items</span>
+          <a href="/index.html" style="color: var(--primary-accent); font-weight: 700; font-size: 0.9rem;">Continue Shopping</a>
+        </div>
+        <div class="cart-items-list" id="cart-items-list">
+          <!-- Loaded dynamically -->
+        </div>
+      </div>
+
+      <!-- Right side: Cart Summary Panel -->
+      <div class="cart-summary-card">
+        <h3 class="summary-title">Order Summary</h3>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="summary-subtotal">₹0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span style="color: var(--success); font-weight: 700;">FREE</span>
+        </div>
+        <div class="summary-row total">
+          <span>Estimated Total</span>
+          <span id="summary-total">₹0.00</span>
+        </div>
+
+        <button class="checkout-btn" id="checkout-btn">
+          Proceed to Checkout
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Empty State -->
+    <div class="cart-card empty-cart-state" id="empty-cart-state" style="display: none;">
+      <div style="font-size: 4rem; margin-bottom: 1rem;">🛒</div>
+      <h3 class="empty-cart-text">Your shopping cart is currently empty</h3>
+      <p style="color: var(--text-muted); margin-bottom: 2rem;">Fill it with fresh items from our collections.</p>
+      <a href="/index.html" class="hero-btn" style="padding: 0.8rem 2.5rem;">Explore Catalog</a>
+    </div>
+
+  </main>
+
+  <!-- Rendered by js/layout.js -->
+  <footer></footer>
+
+  <!-- Scripts -->
+  <script src="/js/toast.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/layout.js"></script>
+  <script src="/js/cart.js"></script>
+</body>
+</html>
