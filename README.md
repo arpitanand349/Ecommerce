@@ -100,7 +100,7 @@ npm start
 npm run dev
 ```
 
-The application will be served at: **[http://localhost:5000](http://localhost:5000)**
+The application will be served at: **[https://ecommerce-backend-xxxx.onrender.com](https://ecommerce-backend-xxxx.onrender.com)**
 
 ---
 
