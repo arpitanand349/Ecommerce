@@ -366,6 +366,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       ordersTab.style.display = 'none';
     } else {
       spinner.style.display = 'none';
+      if (currentTab === 'products') {
+        productsTab.style.display = 'block';
+      } else {
+        ordersTab.style.display = 'block';
+      }
     }
   }
 });
