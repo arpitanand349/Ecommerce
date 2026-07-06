@@ -60,46 +60,6 @@ ecommerce-store/
 ```
 
 ---
-
-## 🚀 Installation & Setup
-
-Follow these steps to run the application locally:
-
-### 1. Prerequisites
-Ensure you have the following installed on your machine:
-- [Node.js](https://nodejs.org/) (v16 or higher)
-- [MongoDB Community Server](https://www.mongodb.com/try/download/community) (running locally on port `27017`)
-
-### 2. Install Dependencies
-Open your terminal in the `ecommerce-store` directory and run:
-```bash
-npm install
-```
-
-### 3. Configure Environment Variables
-A default `.env` is configured inside `backend/`. Feel free to modify it if your database settings differ:
-```env
-PORT=5000
-MONGO_URI=mongodb://127.0.0.1:27017/simple-ecommerce
-JWT_SECRET=supersecretkey12345
-```
-
-### 4. Seed the Database
-Seed initial mock products (from Unsplash) and create test user/admin accounts:
-```bash
-node backend/seed.js
-```
-
-### 5. Run the Application
-Start the server:
-```bash
-# Production mode
-npm start
-
-# Development mode (requires nodemon)
-npm run dev
-```
-
 The application will be served at: **[https://ecommerce-backend-xxxx.onrender.com](https://ecommerce-backend-xxxx.onrender.com)**
 
 ---
