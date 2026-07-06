@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const stockBadge = document.getElementById('stock-badge');
     const addBtn = document.getElementById('add-to-cart-btn');
 
-    img.src = prod.image;
+    img.src = window.API.resolveImageUrl(prod.image);
     img.alt = prod.title;
     img.onerror = () => {
       img.src = `https://placehold.co/500x500/1b4332/ffffff?text=${encodeURIComponent(prod.title)}`;

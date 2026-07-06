@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       
       tr.innerHTML = `
         <td>
-          <img src="${prod.image}" alt="${prod.title}" class="table-img" onerror="this.src='https://placehold.co/60x60/1b4332/ffffff?text=${encodeURIComponent(prod.title)}'">
+          <img src="${window.API.resolveImageUrl(prod.image)}" alt="${prod.title}" class="table-img" onerror="this.src='https://placehold.co/60x60/1b4332/ffffff?text=${encodeURIComponent(prod.title)}'">
         </td>
         <td><strong>${prod.title}</strong></td>
         <td><span class="product-badge">${prod.category}</span></td>

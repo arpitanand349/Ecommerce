@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       itemDiv.className = 'cart-item';
       
       itemDiv.innerHTML = `
-        <img src="${product.image}" alt="${product.title}" class="cart-item-img" onerror="this.src='https://placehold.co/150x150/1b4332/ffffff?text=${encodeURIComponent(product.title)}'">
+        <img src="${window.API.resolveImageUrl(product.image)}" alt="${product.title}" class="cart-item-img" onerror="this.src='https://placehold.co/150x150/1b4332/ffffff?text=${encodeURIComponent(product.title)}'">
         <div class="cart-item-details">
           <span class="cart-item-category">${product.category}</span>
           <h3 class="cart-item-title"><a href="/product.html?id=${product._id}">${product.title}</a></h3>

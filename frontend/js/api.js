@@ -1,6 +1,18 @@
-const API_URL = '/api';
+const BACKEND_URL = 'https://ecommerce-backend-g1wv.onrender.com';
+const API_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('onrender.com'))
+  ? '/api'
+  : `${BACKEND_URL}/api`;
 
 const API = {
+  resolveImageUrl(path) {
+    if (!path) return '';
+    if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
+      return path;
+    }
+    const useBackendHost = !(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('onrender.com'));
+    return useBackendHost ? `${BACKEND_URL}${path}` : path;
+  },
+
   getToken() {
     return localStorage.getItem('token');
   },

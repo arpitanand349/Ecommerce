@@ -6,7 +6,8 @@
   "type": "commonjs",
   "scripts": {
     "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js"
+    "dev": "nodemon backend/server.js",
+    "build": "echo 'Build successful'"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

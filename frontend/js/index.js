@@ -58,7 +58,7 @@ const ProductCatalog = {
       card.innerHTML = `
         <div class="product-image-wrapper">
           <a href="/product.html?id=${product._id}">
-            <img src="${product.image}" alt="${product.title}" class="product-card-img" onerror="this.src='https://placehold.co/300x300/1b4332/ffffff?text=${encodeURIComponent(product.title)}'">
+            <img src="${window.API.resolveImageUrl(product.image)}" alt="${product.title}" class="product-card-img" onerror="this.src='https://placehold.co/300x300/1b4332/ffffff?text=${encodeURIComponent(product.title)}'">
           </a>
           <span class="product-badge">${product.category}</span>
         </div>
