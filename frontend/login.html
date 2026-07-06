@@ -15,27 +15,87 @@
 
   <main class="main-content">
     <div class="auth-container">
-      <div class="auth-header">
-        <h2 class="auth-title">Welcome Back</h2>
-        <p class="auth-subtitle">Sign in to access your shopping cart and orders.</p>
+      <!-- Login View -->
+      <div id="login-view">
+        <div class="auth-header">
+          <h2 class="auth-title">Welcome Back</h2>
+          <p class="auth-subtitle">Sign in to access your shopping cart and orders.</p>
+        </div>
+
+        <form id="login-form">
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" class="form-control" placeholder="name@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+          </div>
+
+          <div class="form-group" style="text-align: right; margin-top: -0.5rem; margin-bottom: 1.5rem;">
+            <a href="#" id="forgot-password-link" style="color: var(--primary-accent); font-size: 0.85rem; font-weight: 600;">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="auth-btn" id="submit-btn">Sign In</button>
+        </form>
+
+        <div class="auth-footer">
+          Don't have an account? <a href="/register.html">Sign Up</a>
+        </div>
       </div>
 
-      <form id="login-form">
-        <div class="form-group">
-          <label for="email" class="form-label">Email Address</label>
-          <input type="email" id="email" class="form-control" placeholder="name@example.com" required>
+      <!-- Forgot Password View -->
+      <div id="forgot-view" style="display: none;">
+        <div class="auth-header">
+          <h2 class="auth-title">Forgot Password</h2>
+          <p class="auth-subtitle">Enter your email address and we'll generate a reset code.</p>
         </div>
 
-        <div class="form-group">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+        <form id="forgot-form">
+          <div class="form-group">
+            <label for="forgot-email" class="form-label">Email Address</label>
+            <input type="email" id="forgot-email" class="form-control" placeholder="name@example.com" required>
+          </div>
+
+          <button type="submit" class="auth-btn" id="forgot-submit-btn">Send Reset Code</button>
+        </form>
+
+        <div class="auth-footer">
+          Remember your password? <a href="#" class="back-to-login">Sign In</a>
+        </div>
+      </div>
+
+      <!-- Reset Password View -->
+      <div id="reset-view" style="display: none;">
+        <div class="auth-header">
+          <h2 class="auth-title">Reset Password</h2>
+          <p class="auth-subtitle">Enter the 6-digit code and your new password.</p>
         </div>
 
-        <button type="submit" class="auth-btn" id="submit-btn">Sign In</button>
-      </form>
+        <form id="reset-form">
+          <div class="form-group">
+            <label for="reset-email" class="form-label">Email Address</label>
+            <input type="email" id="reset-email" class="form-control" readonly style="background-color: #f1f3f2; cursor: not-allowed; opacity: 0.8;">
+          </div>
 
-      <div class="auth-footer">
-        Don't have an account? <a href="/register.html">Sign Up</a>
+          <div class="form-group">
+            <label for="reset-code" class="form-label">6-Digit Code</label>
+            <input type="text" id="reset-code" class="form-control" placeholder="123456" pattern="\d{6}" maxlength="6" required>
+          </div>
+
+          <div class="form-group">
+            <label for="new-password" class="form-label">New Password</label>
+            <input type="password" id="new-password" class="form-control" placeholder="••••••••" minlength="6" required>
+          </div>
+
+          <button type="submit" class="auth-btn" id="reset-submit-btn">Reset Password</button>
+        </form>
+
+        <div class="auth-footer">
+          <a href="#" id="back-to-forgot-link" style="color: var(--primary-accent); font-weight: 700; font-size: 0.9rem; display: block; margin-bottom: 0.5rem;">Resend Code</a>
+          Remember your password? <a href="#" class="back-to-login">Sign In</a>
+        </div>
       </div>
     </div>
   </main>
