@@ -60,7 +60,7 @@ ecommerce-store/
 ```
 
 ---
-The application will be served at: **[https://ecommerce-backend-xxxx.onrender.com](https://ecommerce-backend-xxxx.onrender.com)**
+The application will be served at: **[https://ecommerce-backend-g1wv.onrender.com](https://ecommerce-backend-g1wv.onrender.com)**
 
 ---
 
